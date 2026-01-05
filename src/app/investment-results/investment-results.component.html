@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(year of annualData;track year.year) {
+    <tr>
+      <td>{{ year.year }}</td>
+      <td>{{ year.valueEndOfYear | currency : "USD" : "symbol" : "1.2-2" }}</td>
+      <td>{{ year.interest | currency : "USD" : "symbol" : "1.2-2" }}</td>
+      <td>{{ year.totalInterest | currency : "USD" : "symbol" : "1.2-2" }}</td>
+      <td>
+        {{ year.totalAmountInvested | currency : "USD" : "symbol" : "1.2-2" }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

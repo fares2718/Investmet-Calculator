@@ -1,2 +1,4 @@
 <app-header />
-<app-user-input />
+<app-user-input (calculate)="onCalculate($event)" />
+
+<app-investment-results [annualData]="annualData" />
